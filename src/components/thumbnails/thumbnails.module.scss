@@ -1,0 +1,71 @@
+div.container {
+  align-items: center;
+  background: #f1f1f1;
+  border-radius: var(--thumbnails-br, 0.8rem);
+  display: flex;
+  flex-direction: column;
+  height: 16.5rem;
+  justify-content: flex-end;
+  padding-block: 2.2rem;
+  position: relative;
+  &:not(:last-child) {
+    margin-bottom: 6.8rem;
+  }
+}
+
+img.thumbnail {
+  display: inline-block;
+  left: 50%;
+  position: absolute;
+  top: -50%;
+  transform: translate(-50%, 50%);
+
+  &[alt="thumbnail headphones"] {
+    height: 10.4rem;
+    width: 8rem;
+  }
+
+  &[alt="thumbnail speakers"] {
+    height: 10.1rem;
+    width: 8.4rem;
+  }
+
+  &[alt="thumbnail earphones"] {
+    height: 10.4rem;
+    width: 10.3rem;
+  }
+}
+
+h1.heading {
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.107rem;
+  line-height: 2rem;
+  margin-bottom: 1.7rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+a.link {
+  color: #000;
+  font-family: Manrope;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  line-height: 1.8rem;
+  mix-blend-mode: normal;
+  opacity: 0.5;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  & > img {
+    display: inline-block;
+    height: 1rem;
+    margin-left: 1.3rem;
+    width: 0.5rem;
+  }
+}
