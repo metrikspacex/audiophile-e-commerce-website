@@ -14,6 +14,7 @@
     "plugin:react/all",
     "plugin:react/jsx-runtime",
     "plugin:sonarjs/recommended",
+    "plugin:tailwindcss/recommended",
     "plugin:typescript-sort-keys/recommended",
     "plugin:unicorn/all",
     "plugin:prettier/recommended"
@@ -43,7 +44,6 @@
   ],
   "root": true,
   "rules": {
-    "@typescript-eslint/no-unsafe-argument": "off",
     "@typescript-eslint/ban-ts-comment": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
     "@typescript-eslint/consistent-type-imports": "error",
@@ -60,6 +60,7 @@
     "@typescript-eslint/no-misused-promises": "off",
     "@typescript-eslint/no-type-alias": "off",
     "@typescript-eslint/no-unnecessary-condition": "off",
+    "@typescript-eslint/no-unsafe-argument": "off",
     "@typescript-eslint/no-unsafe-assignment": "off",
     "@typescript-eslint/no-unsafe-call": "off",
     "@typescript-eslint/no-unsafe-return ": "off",
@@ -95,6 +96,7 @@
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
     "import/no-extraneous-dependencies": "error",
+    "import/no-named-as-default": "off",
     "import/no-unresolved": "error",
     "import/order": "off",
     "import/prefer-default-export": "error",
@@ -185,6 +187,7 @@
         "ignoreRestSiblings": true
       }
     ],
+    "no-useless-concat": "off",
     "no-useless-constructor": "error",
     "one-var": "off",
     "prefer-const": "error",
@@ -294,7 +297,8 @@
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
     "sonarjs/cognitive-complexity": "error",
-    "sonarjs/no-duplicate-string": "error",
+    "sonarjs/no-duplicate-string": "off",
+    "no-constant-condition": "off",
     "sonarjs/no-empty-collection": "error",
     "sonarjs/no-redundant-jump": "error",
     "sonarjs/prefer-immediate-return": "error",
@@ -310,6 +314,7 @@
     "unicorn/no-negated-condition": "error",
     "unicorn/no-null": "off",
     "unicorn/no-useless-undefined": "off",
+    "tailwindcss/no-custom-classname": "error",
     "unicorn/prefer-at": "error",
     "unicorn/prefer-dom-node-dataset": "error",
     "unicorn/prefer-event-target": "error",
@@ -341,6 +346,27 @@
     },
     "react": {
       "version": "detect"
+    },
+    "tailwindcss": {
+      "callees": [
+        "classnames",
+        "clsx",
+        "ctl"
+      ],
+      "classRegex": "^class(Name)?$",
+      "config": "tailwind.config.js",
+      "cssFiles": [
+        "**/*.css",
+        "!**/node_modules",
+        "!**/.*",
+        "!**/dist",
+        "!**/build"
+      ],
+      "cssFilesRefreshRate": "5_000",
+      "removeDuplicates": true,
+      "skipClassAttribute": false,
+      "tags": [ ],
+      "whitelist": [ ]
     }
   }
 }
