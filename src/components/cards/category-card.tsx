@@ -19,8 +19,9 @@ export default function CategoryCard({
   return (
     <div
       className={clsx(
-        "relative mb-[6.8rem] flex h-[16.5rem] flex-col items-center justify-end rounded-[0.8rem] bg-primary-300",
-        "md:grow"
+        "relative mb-[6.8rem] flex h-[16.5rem] flex-col items-center justify-end rounded-[0.8rem] bg-primary-300 last:mb-0",
+        "md:mb-0 md:grow",
+        "xl:h-[20.5rem]"
       )}>
       <img
         alt={alt}

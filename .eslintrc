@@ -92,7 +92,7 @@
     "func-style": "off",
     "guard-for-in": "error",
     "id-length": "error",
-    "import/extensions": "error",
+    "import/extensions": "off",
     "import/first": "error",
     "import/newline-after-import": "error",
     "import/no-duplicates": "error",
@@ -366,8 +366,8 @@
       "cssFilesRefreshRate": "5_000",
       "removeDuplicates": true,
       "skipClassAttribute": false,
-      "tags": [ ],
-      "whitelist": [ ]
+      "tags": [],
+      "whitelist": []
     }
   }
 }

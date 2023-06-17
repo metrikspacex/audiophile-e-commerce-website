@@ -17,23 +17,39 @@ A
 src/vite-env.d.ts,4/a/4a1606df53288886cdd75df816f1e46b41e61eeb
 >
 src/router.tsx,c/6/c615dd93d0c3edfa1b1b8b12a1809855925f8b55
-<
-src/main.tsx,6/0/60f616ca71634bb2f8a78d5984d3a0127c05d567
 ?
 .prettierignore,b/6/b69d8408b6c89ae66e712f0e6af68848291cfdfb
 =
 .eslintignore,8/8/88939cd7e826eac4f61dd9adac091b9d64277287
-G
-src/pages/home/home.tsx,7/5/7541f26a4cf9e69faf30a73c5fe143c3c9f5c653
 ;
 .prettierrc,2/0/20137a9e94744624390b6748bc96df5ca1579b71
 A
 postcss.config.js,3/f/3f70684581fd16ab3be77ca959e0138ef3ee8bfb
 G
 src/styles/globals.scss,0/3/03c76becad79671cb9607754b1bfa58662fed1f3
-9
-	.eslintrc,4/b/4be5f5e3cea171c304090be92469b2f2cb51039a
 B
 tailwind.config.js,0/9/0918cbb76f2c44f223706cec9d31a32cd1177ce4
+<
+src/main.tsx,6/0/60f616ca71634bb2f8a78d5984d3a0127c05d567
+E
+src/hooks/useWidth.ts,6/9/698f06c869fca848d045b3ca95c2e7b56ea00ca9
+L
+src/components/hero/hero.tsx,1/4/143814fcc1610123d2eea76b2b72eb015e5536a5
+L
+src/components/menu/menu.tsx,8/9/89c8ac97eb754b1ac25d00582ee8717eb6b9d617
 >
 src/layout.tsx,d/0/d01c32044f81c1406e8264de87922dd05f91170c
+P
+ src/components/header/header.tsx,7/3/7369eb04106109159830761d6bed5b45c03c0427
+W
+'src/components/cards/best-gear-card.tsx,9/c/9c10d94e1a4d989775e476260a4503012273de3e
+9
+	.eslintrc,4/b/4be5f5e3cea171c304090be92469b2f2cb51039a
+Y
+)src/components/cards/zx7-speaker-card.tsx,c/1/c1e807547f931fd67a1157e482629d0c96a13995
+[
++src/components/cards/yx1-earphones-card.tsx,2/2/2206f48fa442817233d1817388dfca46d4a6e7c2
+Y
+)src/components/cards/zx9-speaker-card.tsx,3/4/343c154e78e16e12e9d869808c862a523b717c3e
+G
+src/pages/home/home.tsx,7/5/7541f26a4cf9e69faf30a73c5fe143c3c9f5c653

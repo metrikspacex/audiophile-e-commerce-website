@@ -7,13 +7,12 @@ import Main from "./components/main/main";
 
 export default function Layout() {
   const [menu, setMenu] = useState<boolean>(false);
-
   return (
     <div
       className={clsx(
-        "grid min-h-screen grid-cols-[1fr] grid-rows-[60rem_1fr_64.8rem] bg-primary-100 font-primary",
-        "md:grid-rows-[76.8rem_1fr_64.8rem]",
-        "xl:grid-rows-[72.9rem_1fr_64.8rem]"
+        "grid min-h-screen grid-cols-[1fr] grid-rows-[60rem_1fr_65.4rem] bg-primary-100 font-primary",
+        "md:grid-rows-[72.9rem_1fr_40rem]",
+        "xl:grid-rows-[72.9rem_1fr_36.5rem]"
       )}>
       <Header menu={menu} setMenu={setMenu} />
       <Main menu={menu} />

@@ -14,7 +14,7 @@ export default function Nav({ setMenu, width }: NavProps) {
       className={clsx(
         "z-[2] col-1 row-1 mx-auto flex w-full max-w-[37.5rem] items-center justify-around border-b-2 border-primary-100/10 bg-transparent",
         "md:max-w-[68.9rem] md:justify-start",
-        "xl:max-w-[110.9rem] xl:justify-between"
+        "xl:max-w-[110rem] xl:justify-between"
       )}>
       {width < 1440 ? (
         <img
