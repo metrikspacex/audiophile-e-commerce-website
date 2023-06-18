@@ -25,10 +25,10 @@ export default function Footer({}: FooterProps) {
           "md:col-full md:row-2 md:h-[max-content] md:flex-row md:gap-x-[3.4rem]",
           "xl:col-2 xl:row-1 xl:justify-self-end"
         )}>
-        <Link to="/shop">home</Link>
-        <Link to="/shop">headphones</Link>
-        <Link to="/shop">speakers</Link>
-        <Link to="/shop">earphones</Link>
+        <Link to="/">home</Link>
+        <Link to="/category/headphones">headphones</Link>
+        <Link to="/category/speakers">speakers</Link>
+        <Link to="/category/earphones">earphones</Link>
       </div>
       <div
         className={clsx(

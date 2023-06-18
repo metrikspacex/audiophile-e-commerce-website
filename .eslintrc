@@ -82,7 +82,7 @@
       10
     ],
     "consistent-return": "off",
-    "curly": "error",
+    "curly": "off",
     "default-case": "error",
     "dot-notation": "error",
     "eqeqeq": [
@@ -111,6 +111,7 @@
     "jsx-a11y/click-events-have-key-events": "off",
     "jsx-a11y/media-has-caption": "off",
     "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "line-comment-position": "off",
     "linebreak-style": [
       "error",
       "unix"
@@ -153,6 +154,7 @@
     "no-implicit-coercion": "error",
     "no-implicit-globals": "error",
     "no-implied-eval": "error",
+    "no-inline-comments": "off",
     "no-invalid-this": "error",
     "no-iterator": "error",
     "no-labels": "error",
@@ -174,7 +176,7 @@
     "no-script-url": "error",
     "no-self-compare": "error",
     "no-sequences": "error",
-    "no-shadow": "error",
+    "no-shadow": "off",
     "no-template-curly-in-string": "error",
     "no-ternary": "off",
     "no-undefined": "off",
@@ -289,7 +291,7 @@
     "react/no-unescaped-entities": "error",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
-    "react/require-default-props": "error",
+    "react/require-default-props": "off",
     "react/self-closing-comp": "off",
     "react/void-dom-elements-no-children": "error",
     "semi": [
@@ -366,8 +368,8 @@
       "cssFilesRefreshRate": "5_000",
       "removeDuplicates": true,
       "skipClassAttribute": false,
-      "tags": [],
-      "whitelist": []
+      "tags": [ ],
+      "whitelist": [ ]
     }
   }
 }

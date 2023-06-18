@@ -1,10 +1,12 @@
 import clsx from "clsx";
-import type { HTMLAttributes } from "react";
+import type { Dispatch, HTMLAttributes, SetStateAction } from "react";
 
 import CategoryCard from "../cards/category-card";
 
-export type MenuProps = HTMLAttributes<HTMLElement> & {};
-export default function Menu({}: MenuProps) {
+export type MenuProps = HTMLAttributes<HTMLElement> & {
+  setMenu: Dispatch<SetStateAction<boolean>>;
+};
+export default function Menu({ setMenu }: MenuProps) {
   return (
     <menu
       className={clsx(
@@ -13,24 +15,27 @@ export default function Menu({}: MenuProps) {
         "xl:max-w-[110rem]"
       )}>
       <CategoryCard
-        alt=""
+        alt="headphones"
         height="10.4rem"
+        setMenu={setMenu}
         src="/shared/desktop/image-category-thumbnail-headphones.png"
-        to="/shop"
+        to="/category/headphones"
         width="8rem"
       />
       <CategoryCard
-        alt=""
+        alt="speakers"
         height="10.1rem"
+        setMenu={setMenu}
         src="/shared/desktop/image-category-thumbnail-speakers.png"
-        to="/shop"
+        to="/category/speakers"
         width="8.4rem"
       />
       <CategoryCard
-        alt=""
+        alt="earphones"
         height="10.4rem"
+        setMenu={setMenu}
         src="/shared/desktop/image-category-thumbnail-earphones.png"
-        to="/shop"
+        to="/category/earphones"
         width="10.3rem"
       />
     </menu>

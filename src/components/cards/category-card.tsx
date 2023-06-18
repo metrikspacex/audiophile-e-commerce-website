@@ -1,10 +1,11 @@
 import clsx from "clsx";
-import type { HTMLAttributes } from "react";
+import type { Dispatch, HTMLAttributes, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 
 export type CategoryCardProps = HTMLAttributes<HTMLDivElement> & {
   alt: string;
   height: string;
+  setMenu?: Dispatch<SetStateAction<boolean>>;
   src: string;
   to: string;
   width: string;
@@ -12,10 +13,15 @@ export type CategoryCardProps = HTMLAttributes<HTMLDivElement> & {
 export default function CategoryCard({
   alt,
   height,
+  setMenu,
   src,
   to,
   width,
 }: CategoryCardProps) {
+  const onClick = () => {
+    if (setMenu !== undefined) setMenu((ps) => !ps);
+  };
+
   return (
     <div
       className={clsx(
@@ -35,9 +41,9 @@ export default function CategoryCard({
         className={clsx(
           "mb-[1.7rem] font-primary text-[1.5rem] font-bold uppercase leading-[2rem] tracking-[0.1rem] text-primary-800"
         )}>
-        headphones
+        {alt}
       </h1>
-      <Link to={to}>
+      <Link to={to} onClick={onClick}>
         <p
           className={clsx(
             "mb-[2.2rem] font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-800 opacity-50 mix-blend-normal"

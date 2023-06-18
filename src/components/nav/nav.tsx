@@ -36,9 +36,9 @@ export default function Nav({ setMenu, width }: NavProps) {
       {width < 1440 ? null : (
         <ul className={clsx("flex grow justify-center gap-x-[3.4rem]")}>
           <NavLink text="home" to="/" />
-          <NavLink text="headphones" to="/" />
-          <NavLink text="speakers" to="/" />
-          <NavLink text="earphones" to="/" />
+          <NavLink text="headphones" to="/category/headphones" />
+          <NavLink text="speakers" to="/category/speakers" />
+          <NavLink text="earphones" to="/category/earphones" />
         </ul>
       )}
       <Link to="/cart">

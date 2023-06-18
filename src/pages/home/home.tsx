@@ -21,24 +21,24 @@ export default function HomePage() {
         )}
         role="navigation">
         <CategoryCard
-          alt=""
+          alt="headphones"
           height={width >= 1440 ? "16rem" : "10.4rem"}
           src="/shared/desktop/image-category-thumbnail-headphones.png"
-          to="/shop"
+          to="/category/headphones"
           width={width >= 1440 ? "12.2rem" : "8rem"}
         />
         <CategoryCard
-          alt=""
+          alt="speakers"
           height={width >= 1440 ? "14.6rem" : "10.1rem"}
           src="/shared/desktop/image-category-thumbnail-speakers.png"
-          to="/shop"
+          to="/category/speakers"
           width={width >= 1440 ? "12.1rem" : "8.4rem"}
         />
         <CategoryCard
-          alt=""
+          alt="earphones"
           height={width >= 1440 ? "16.1rem" : "10.4rem"}
           src="/shared/desktop/image-category-thumbnail-earphones.png"
-          to="/shop"
+          to="/category/earphones"
           width={width >= 1440 ? "17.8rem" : "10.3rem"}
         />
       </section>
