@@ -4,7 +4,6 @@ const useWidth = () => {
   const [width, setWidth] = useState<number>(window.innerWidth);
 
   useEffect(() => {
-    console.count("useWidth");
     const handleResize = () => {
       setWidth(window.innerWidth);
     };

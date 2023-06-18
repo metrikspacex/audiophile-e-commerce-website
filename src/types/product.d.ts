@@ -37,9 +37,11 @@ type Image = {
 };
 
 type Includes = {
-  item: string;
-  quantity: number;
+  item: Item;
+  quantity: Quantity;
 };
+
+type Item = string;
 
 type Name = string;
 
@@ -56,6 +58,8 @@ type Others = {
 };
 
 type Price = number;
+
+type Quantity = number;
 
 type Slug = string;
 

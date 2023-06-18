@@ -11,6 +11,7 @@ export default function BestGear({ width }: BestGearProps) {
   } else if (width >= 1440) {
     src = "/shared/desktop/image-best-gear.jpg";
   }
+
   return (
     <div
       className={clsx(
