@@ -1,10 +1,10 @@
 import clsx from "clsx";
-import type { Dispatch, HTMLAttributes, SetStateAction } from "react";
+import type { HTMLAttributes } from "react";
 
 import CategoryCard from "../cards/category-card";
 
 export type MenuProps = HTMLAttributes<HTMLElement> & {
-  setMenu: Dispatch<SetStateAction<boolean>>;
+  setMenu: () => void;
 };
 export default function Menu({ setMenu }: MenuProps) {
   return (

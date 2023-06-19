@@ -1,20 +1,16 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import Footer from "../../components/footer/footer";
 import Menu from "../../components/menu/menu";
 import Nav from "../../components/nav/nav";
+import useStore from "../../hooks/useStore";
 import useWidth from "../../hooks/useWidth";
 
 export default function CategoryLayout() {
-  const [menu, setMenu] = useState<boolean>(false);
-  const { pathname } = useLocation();
   const width = useWidth();
-
-  useEffect(() => {
-    window.document.documentElement.scrollTop = 0;
-  }, [pathname]);
+  const { pathname } = useLocation();
+  const { setMenuModal, state } = useStore();
 
   return (
     <div
@@ -27,8 +23,10 @@ export default function CategoryLayout() {
         className={clsx(
           "relative grid grid-cols-[1fr] grid-rows-[9rem_1fr] bg-primary-600"
         )}>
-        <Nav setMenu={setMenu} width={width} />
-        {menu && width < 1440 ? <Menu setMenu={setMenu} /> : null}
+        <Nav setMenu={setMenuModal} width={width} />
+        {state.menuModal && width < 1440 ? (
+          <Menu setMenu={setMenuModal} />
+        ) : null}
         <div
           className={clsx(
             "my-auto block text-center font-primary text-[2.8rem] font-bold uppercase leading-[3.8rem] tracking-[0.2rem] text-primary-100"
@@ -38,7 +36,7 @@ export default function CategoryLayout() {
       </header>
       <main
         className={clsx("z-[0] col-1 row-2 bg-primary-100", {
-          "brightness-[0.2]": menu,
+          "brightness-[0.2]": state.cartModal || state.menuModal,
         })}>
         <Outlet />
       </main>

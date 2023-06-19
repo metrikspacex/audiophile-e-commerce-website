@@ -12,67 +12,76 @@ import HomeLayout from "./pages/home/layout.tsx";
 import ProductError from "./pages/product/error.tsx";
 import ProductLayout from "./pages/product/layout.tsx";
 import ProductSlug from "./pages/product/product-slug.tsx";
+import Root from "./pages/root.tsx";
 
 const router = createBrowserRouter([
   {
     children: [
       {
-        element: <HomePage />,
-        index: true,
-      },
-    ],
-    element: <HomeLayout />,
-    path: "/",
-  },
-  {
-    children: [
-      {
-        element: <EarphonesPage />,
-        path: "/category/earphones",
+        children: [
+          {
+            element: <HomePage />,
+            index: true,
+          },
+        ],
+        element: <HomeLayout />,
+        path: "/",
       },
       {
-        element: <HeadphonesPage />,
-        path: "/category/headphones",
+        children: [
+          {
+            element: <EarphonesPage />,
+            path: "/category/earphones/",
+          },
+          {
+            element: <HeadphonesPage />,
+            path: "/category/headphones/",
+          },
+          {
+            element: <SpeakersPage />,
+            path: "/category/speakers/",
+          },
+        ],
+        element: <CategoryLayout />,
+        path: "/category/",
       },
       {
-        element: <SpeakersPage />,
-        path: "/category/speakers",
-      },
-    ],
-    element: <CategoryLayout />,
-    path: "/category",
-  },
-  {
-    children: [
-      {
-        element: <CheckoutPage />,
+        children: [
+          {
+            element: <CheckoutPage />,
+            path: "/checkout/",
+          },
+        ],
+        element: <CheckoutLayout />,
         path: "/checkout/",
       },
-    ],
-    element: <CheckoutLayout />,
-    path: "/checkout",
-  },
-  {
-    children: [
       {
-        element: <ProductSlug />,
-        errorElement: <ProductError />,
-        loader: async ({ params }) => {
-          const _content = content.find((item) => item.slug === params.slug);
+        children: [
+          {
+            element: <ProductSlug />,
+            errorElement: <ProductError />,
+            loader: async ({ params }) => {
+              const _content = content.find(
+                (item) => item.slug === params.slug
+              );
 
-          if (_content) {
-            return _content;
-          }
+              if (_content) {
+                return _content;
+              }
 
-          throw json({
-            message: "Product not found",
-          });
-        },
-        path: ":slug",
+              throw json({
+                message: "Product not found",
+              });
+            },
+            path: ":slug",
+          },
+        ],
+        element: <ProductLayout />,
+        path: "/product/",
       },
     ],
-    element: <ProductLayout />,
-    path: "/product/",
+    element: <Root />,
+    path: "/",
   },
 ]);
 export default router;

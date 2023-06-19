@@ -1,6 +1,46 @@
 import type { ReactElement } from "react";
 import { createContext, useCallback, useReducer } from "react";
 
+const testStore = [
+  {
+    categoryImage: {
+      desktop:
+        "/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
+      mobile:
+        "/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
+      tablet:
+        "/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
+    },
+    id: 4,
+    name: "XX99 Mk II Headphones",
+    price: 2999,
+    quantity: 1,
+  },
+  {
+    categoryImage: {
+      desktop:
+        "/product-xx59-headphones/desktop/image-category-page-preview.jpg",
+      mobile: "/product-xx59-headphones/mobile/image-category-page-preview.jpg",
+      tablet: "/product-xx59-headphones/tablet/image-category-page-preview.jpg",
+    },
+    id: 2,
+    name: "XX59 Headphones",
+    price: 899,
+    quantity: 2,
+  },
+  {
+    categoryImage: {
+      desktop: "/product-yx1-earphones/desktop/image-category-page-preview.jpg",
+      mobile: "/product-yx1-earphones/mobile/image-category-page-preview.jpg",
+      tablet: "/product-yx1-earphones/tablet/image-category-page-preview.jpg",
+    },
+    id: 1,
+    name: "YX1 Earphones",
+    price: 599,
+    quantity: 1,
+  },
+];
+
 type StoreState = {
   cart: CartItem[];
   cartModal: boolean;
@@ -8,7 +48,7 @@ type StoreState = {
 };
 
 const initialStoreState: StoreState = {
-  cart: [],
+  cart: testStore,
   cartModal: false,
   menuModal: false,
 };
@@ -70,7 +110,7 @@ const reducer = (state: StoreState, action: ReducerAction): StoreState => {
     }
     case REDUCER_ACTION_TYPE.UPDATECART: {
       if (!action.payload) {
-        throw new Error("ADD CART - Action payload missing");
+        throw new Error("Update CART - Action payload missing");
       }
 
       let _cart = [...state.cart];
@@ -82,14 +122,19 @@ const reducer = (state: StoreState, action: ReducerAction): StoreState => {
         const _filtedById = _cart.filter(
           (item) => item.id !== action.payload?.id
         );
-        const updatedItem: CartItem = {
-          categoryImage: foundInCart.categoryImage,
-          id: foundInCart.id,
-          name: foundInCart.name,
-          price: foundInCart.price,
-          quantity: action.payload.quantity,
-        };
-        _cart = [..._filtedById, updatedItem];
+
+        if (action.payload.quantity > 0) {
+          const updatedItem: CartItem = {
+            categoryImage: foundInCart.categoryImage,
+            id: foundInCart.id,
+            name: foundInCart.name,
+            price: foundInCart.price,
+            quantity: action.payload.quantity,
+          };
+          _cart = [..._filtedById, updatedItem];
+        } else {
+          _cart = [..._filtedById];
+        }
       }
 
       return { ...state, cart: _cart };

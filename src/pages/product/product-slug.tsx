@@ -1,6 +1,5 @@
 import clsx from "clsx";
-import { useEffect } from "react";
-import { Link, useLoaderData, useLocation } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 import BestGear from "../../components/cards/best-gear-card";
 import CategoryCard from "../../components/cards/category-card";
@@ -9,19 +8,13 @@ import Gallery from "../../components/cards/product-detail-card/gallery";
 import InBox from "../../components/cards/product-detail-card/in-box";
 import Recommended from "../../components/cards/product-detail-card/recommended";
 import Showcase from "../../components/cards/product-detail-card/showcase";
+import useStore from "../../hooks/useStore";
 import useWidth from "../../hooks/useWidth";
 
 export default function ProductSlug() {
   const product = useLoaderData() as Product;
-  const { pathname } = useLocation();
   const width = useWidth();
-
-  useEffect(() => {
-    window.document.documentElement.scrollTo({
-      behavior: "smooth",
-      top: 0,
-    });
-  }, [pathname]);
+  const { state } = useStore();
 
   return (
     <>
@@ -32,13 +25,15 @@ export default function ProductSlug() {
           "xl:mt-[7.9rem] xl:max-w-[110rem]"
         )}
         role="link">
-        <Link
-          className={clsx(
-            "font-primary text-[1.5rem] font-medium leading-[2.5rem] text-primary-800 opacity-50 mix-blend-normal"
-          )}
-          to="/">
-          Go back
-        </Link>
+        {width >= 768 || !state.cartModal ? (
+          <Link
+            className={clsx(
+              "font-primary text-[1.5rem] font-medium leading-[2.5rem] text-primary-800 opacity-50 mix-blend-normal"
+            )}
+            to="/">
+            Go back
+          </Link>
+        ) : null}
       </section>
       <section
         aria-label={`showcase of ${product.name}`}

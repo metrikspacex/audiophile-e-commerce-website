@@ -1,15 +1,15 @@
 import clsx from "clsx";
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Footer from "../../components/footer/footer";
 import Menu from "../../components/menu/menu";
 import Nav from "../../components/nav/nav";
+import useStore from "../../hooks/useStore";
 import useWidth from "../../hooks/useWidth";
 
 export default function CheckoutLayout() {
-  const [menu, setMenu] = useState<boolean>(false);
   const width = useWidth();
+  const { setMenuModal, state } = useStore();
 
   return (
     <div
@@ -22,12 +22,14 @@ export default function CheckoutLayout() {
         className={clsx(
           "relative grid grid-cols-[1fr] grid-rows-[9rem_1fr] bg-primary-600"
         )}>
-        <Nav setMenu={setMenu} width={width} />
-        {menu && width < 1440 ? <Menu setMenu={setMenu} /> : null}
+        <Nav setMenu={setMenuModal} width={width} />
+        {state.menuModal && width < 1440 ? (
+          <Menu setMenu={setMenuModal} />
+        ) : null}
       </header>
       <main
         className={clsx("col-1 row-2 bg-primary-100", {
-          "brightness-[0.2]": menu,
+          "brightness-[0.2]": state.cartModal || state.menuModal,
         })}>
         <Outlet />
       </main>

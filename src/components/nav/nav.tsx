@@ -1,17 +1,17 @@
 import clsx from "clsx";
-import type { Dispatch, HTMLAttributes, SetStateAction } from "react";
+import type { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 
-import useCartModal from "../../hooks/useCartModal";
+import useStore from "../../hooks/useStore";
 import CartModal from "../cart/cart-modal";
 import NavLink from "./nav-link";
 
 export type NavProps = HTMLAttributes<HTMLElement> & {
-  setMenu: Dispatch<SetStateAction<boolean>>;
+  setMenu: () => void;
   width: number;
 };
 export default function Nav({ setMenu, width }: NavProps) {
-  const { setCartModal, state } = useCartModal();
+  const { setCartModal, state } = useStore();
 
   return (
     <nav
@@ -25,7 +25,9 @@ export default function Nav({ setMenu, width }: NavProps) {
           alt="menu button"
           className={clsx("hover:cursor-pointer")}
           src="/shared/tablet/icon-hamburger.svg"
-          onClick={() => setMenu((ps) => !ps)}
+          onClick={() => {
+            if (!state.cartModal) setMenu();
+          }}
         />
       ) : null}
       <Link
@@ -48,7 +50,9 @@ export default function Nav({ setMenu, width }: NavProps) {
       <button
         className={clsx("bg-transparent")}
         type="button"
-        onClick={() => setCartModal()}>
+        onClick={() => {
+          if (!state.menuModal) setCartModal();
+        }}>
         <img
           alt="cart"
           className={clsx("hover:cursor-pointer")}

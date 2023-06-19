@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import type { Dispatch, HTMLAttributes, SetStateAction } from "react";
+import type { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 
 export type CategoryCardProps = HTMLAttributes<HTMLDivElement> & {
   alt: string;
   height: string;
-  setMenu?: Dispatch<SetStateAction<boolean>>;
+  setMenu?: () => void;
   src: string;
   to: string;
   width: string;
@@ -19,7 +19,7 @@ export default function CategoryCard({
   width,
 }: CategoryCardProps) {
   const onClick = () => {
-    if (setMenu !== undefined) setMenu((ps) => !ps);
+    if (setMenu !== undefined) setMenu();
   };
 
   return (

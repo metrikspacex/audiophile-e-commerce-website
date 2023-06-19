@@ -1,6 +1,6 @@
 import clsx from "clsx";
 
-import useCart from "../../hooks/useCart";
+import useCart from "../../hooks/useStore";
 
 export default function CartModal() {
   const { deleteCart, state, updateCart } = useCart();
@@ -18,7 +18,8 @@ export default function CartModal() {
   return (
     <div
       className={clsx(
-        "absolute right-0 top-[9rem] mr-[2.4rem] mt-[2.4rem] block w-[32.7rem] rounded-[0.8rem] bg-primary-400 p-[3.1rem_2.8rem_3.1rem_2.8rem]"
+        "absolute right-0 top-[9rem] mr-[2.4rem] mt-[2.4rem] block w-[32.7rem] rounded-[0.8rem] bg-primary-100 p-[3.1rem_2.8rem_3.1rem_2.8rem]",
+        "md:mr-0 md:w-[37.7rem] md:p-[3.1rem_3.3rem_3.1rem_3.3rem]"
       )}>
       <div
         className={clsx(
@@ -124,7 +125,7 @@ export default function CartModal() {
 
       <button
         className={clsx(
-          "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold leading-[1.8rem] tracking-[0.1rem] text-primary-100"
+          "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"
         )}
         type="button">
         checkout

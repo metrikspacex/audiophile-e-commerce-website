@@ -79,11 +79,9 @@
     "array-callback-return": "error",
     "block-scoped-var": "error",
     "capitalized-comments": "off",
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": "off",
     "class-methods-use-this": "error",
-    "complexity": [
-      "error",
-      10
-    ],
+    "complexity": "off",
     "consistent-return": "off",
     "curly": "off",
     "default-case": "error",
@@ -297,7 +295,7 @@
     ],
     "simple-import-sort/exports": "error",
     "simple-import-sort/imports": "error",
-    "sonarjs/cognitive-complexity": "error",
+    "sonarjs/cognitive-complexity": "off",
     "sonarjs/no-duplicate-string": "off",
     "sonarjs/no-empty-collection": "error",
     "sonarjs/no-redundant-jump": "error",

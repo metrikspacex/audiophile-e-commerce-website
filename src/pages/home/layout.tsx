@@ -1,15 +1,15 @@
 import clsx from "clsx";
-import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 
 import Footer from "../../components/footer/footer";
 import Hero from "../../components/hero/hero";
 import Menu from "../../components/menu/menu";
 import Nav from "../../components/nav/nav";
+import useStore from "../../hooks/useStore";
 import useWidth from "../../hooks/useWidth";
 
 export default function HomeLayout() {
-  const [menu, setMenu] = useState<boolean>(false);
+  const { setMenuModal, state } = useStore();
   const width = useWidth();
 
   let heroSrc = "/home/mobile/image-header.jpg";
@@ -18,10 +18,6 @@ export default function HomeLayout() {
   } else if (width >= 1440) {
     heroSrc = "/home/desktop/image-hero.jpg";
   }
-
-  useEffect(() => {
-    window.document.documentElement.scrollTop = 0;
-  }, []);
 
   return (
     <div
@@ -34,13 +30,15 @@ export default function HomeLayout() {
         className={clsx(
           "relative grid grid-cols-[1fr] grid-rows-[9rem_1fr] bg-primary-600"
         )}>
-        <Nav setMenu={setMenu} width={width} />
-        {menu && width < 1440 ? <Menu setMenu={setMenu} /> : null}
+        <Nav setMenu={setMenuModal} width={width} />
+        {state.menuModal && width < 1440 ? (
+          <Menu setMenu={setMenuModal} />
+        ) : null}
         <Hero src={heroSrc} />
       </header>
       <main
         className={clsx("z-[0] col-1 row-2 bg-primary-100", {
-          "brightness-[0.2]": menu,
+          "brightness-[0.2]": state.cartModal || state.menuModal,
         })}>
         <Outlet />
       </main>

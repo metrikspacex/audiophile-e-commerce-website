@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { type HTMLAttributes, useState } from "react";
 
-import useCart from "../../../hooks/useCart";
+import useCart from "../../../hooks/useStore";
 
 export type ShowcaseProps = HTMLAttributes<HTMLDivElement> & {
   _id: Id;
