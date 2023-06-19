@@ -15,8 +15,8 @@ export default function CheckoutPage() {
       <section
         className={clsx(
           "mx-auto mb-[2.4rem] mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
-          "md:mt-[3.3rem] md:max-w-[68.9rem]",
-          "xl:mt-[7.9rem] xl:max-w-[110rem]"
+          "md:mt-[4.8rem] md:max-w-[68.9rem]",
+          "xl:mb-[3.8rem] xl:mt-[7.9rem] xl:max-w-[110rem]"
         )}
         role="link">
         {width >= 768 || !state.cartModal ? (
@@ -31,9 +31,9 @@ export default function CheckoutPage() {
       </section>
       <div
         className={clsx(
-          "mx-auto mb-[3.2rem] mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
-          "md:mt-[3.3rem] md:max-w-[68.9rem]",
-          "xl:mb-0 xl:mt-[7.9rem] xl:grid xl:max-w-[110rem] xl:grid-cols-[73rem_35rem] xl:grid-rows-[1fr] xl:gap-x-[3rem]"
+          "mx-auto mb-[3.2rem] w-full max-w-[32.7rem] bg-primary-200",
+          "md:max-w-[68.9rem]",
+          "xl:mb-[14.1rem] xl:grid xl:max-w-[110rem] xl:grid-cols-[73rem_35rem] xl:grid-rows-[1fr] xl:gap-x-[3rem]"
         )}>
         <section
           aria-label="checkout form"

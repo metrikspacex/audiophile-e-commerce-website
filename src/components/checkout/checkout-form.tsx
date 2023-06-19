@@ -133,7 +133,7 @@ export default function CheckoutForm({}: CheckoutFormProps) {
       className={clsx(
         "mb-[3.2rem] w-full rounded-[0.8rem] bg-primary-100 p-[2.4rem_2.4rem_3.1rem_2.4rem]",
         "md:p-[3rem_2.7rem_3rem_2.7rem]",
-        "xl:p-[5.4rem_4.8rem_4.8rem_4.8rem]"
+        "xl:mb-0 xl:p-[5.4rem_4.8rem_4.8rem_4.8rem]"
       )}>
       <h1
         className={clsx(

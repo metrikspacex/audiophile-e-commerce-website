@@ -28,7 +28,8 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
   return (
     <div
       className={clsx(
-        "mb-[9.7rem] w-full rounded-[0.8rem] bg-primary-100 p-[3.2rem_2.4rem_3.2rem_2.4rem]"
+        "mb-[9.7rem] w-full rounded-[0.8rem] bg-primary-100 p-[3.2rem_2.4rem_3.2rem_2.4rem]",
+        "md:mb-[11.6rem]"
       )}>
       <h1
         className={clsx(

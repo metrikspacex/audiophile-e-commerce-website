@@ -17,11 +17,11 @@ export default function CheckoutLayout() {
       className={clsx(
         "grid min-h-screen grid-cols-[1fr] grid-rows-[9rem_1fr_65.4rem] bg-primary-100 font-primary",
         "md:grid-rows-[9rem_1fr_40rem]",
-        "xl:grid-rows-[9rem_1fr_36.5rem]"
+        "xl:grid-rows-[9.7rem_1fr_36.5rem]"
       )}>
       <header
         className={clsx(
-          "relative grid grid-cols-[1fr] grid-rows-[9rem_1fr] bg-primary-600"
+          "relative grid grid-cols-[1fr] grid-rows-[9.7rem_1fr] bg-primary-600"
         )}>
         <Nav setMenu={setMenuModal} width={width} />
         {state.menuModal && width < 1440 ? (
