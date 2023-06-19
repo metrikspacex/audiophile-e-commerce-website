@@ -2,7 +2,7 @@
   "files.exclude": {
     "**/.git": true,
     ".eslintignore": true,
-    ".github": true,
+    ".github": false,
     ".gitignore": true,
     ".idea": true,
     ".prettierignore": true,
