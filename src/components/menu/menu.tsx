@@ -18,24 +18,24 @@ export default function Menu({ setMenu }: MenuProps) {
         alt="headphones"
         height="10.4rem"
         setMenu={setMenu}
-        src="/shared/desktop/image-category-thumbnail-headphones.png"
-        to="/category/headphones"
+        src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-headphones.png"
+        to="/audiophile-e-commerce-website/category/headphones"
         width="8rem"
       />
       <CategoryCard
         alt="speakers"
         height="10.1rem"
         setMenu={setMenu}
-        src="/shared/desktop/image-category-thumbnail-speakers.png"
-        to="/category/speakers"
+        src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-speakers.png"
+        to="/audiophile-e-commerce-website/category/speakers"
         width="8.4rem"
       />
       <CategoryCard
         alt="earphones"
         height="10.4rem"
         setMenu={setMenu}
-        src="/shared/desktop/image-category-thumbnail-earphones.png"
-        to="/category/earphones"
+        src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-earphones.png"
+        to="/audiophile-e-commerce-website/category/earphones"
         width="10.3rem"
       />
     </menu>

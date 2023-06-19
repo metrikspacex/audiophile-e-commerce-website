@@ -25,7 +25,7 @@ export default function Nav({ setMenu, width }: NavProps) {
         <img
           alt="menu button"
           className={clsx("hover:cursor-pointer")}
-          src="/shared/tablet/icon-hamburger.svg"
+          src="/audiophile-e-commerce-website/shared/tablet/icon-hamburger.svg"
           onClick={() => {
             if (!state.cartModal && !state.checkoutModal) setMenu();
           }}
@@ -34,19 +34,28 @@ export default function Nav({ setMenu, width }: NavProps) {
       <Link
         className={clsx("md:ml-[4.2rem] md:grow", "xl:ml-0 xl:grow-0")}
         state={{ from: pathname }}
-        to="/">
+        to="/audiophile-e-commerce-website/">
         <img
           alt="logo"
           className={clsx("hover:cursor-pointer")}
-          src="/shared/desktop/logo.svg"
+          src="/audiophile-e-commerce-website/shared/desktop/logo.svg"
         />
       </Link>
       {width < 1440 ? null : (
         <ul className={clsx("flex grow justify-center gap-x-[3.4rem]")}>
           <NavLink text="home" to="/" />
-          <NavLink text="headphones" to="/category/headphones" />
-          <NavLink text="speakers" to="/category/speakers" />
-          <NavLink text="earphones" to="/category/earphones" />
+          <NavLink
+            text="headphones"
+            to="/audiophile-e-commerce-website/category/headphones"
+          />
+          <NavLink
+            text="speakers"
+            to="/audiophile-e-commerce-website/category/speakers"
+          />
+          <NavLink
+            text="earphones"
+            to="/audiophile-e-commerce-website/category/earphones"
+          />
         </ul>
       )}
       <button
@@ -58,7 +67,7 @@ export default function Nav({ setMenu, width }: NavProps) {
         <img
           alt="cart"
           className={clsx("hover:cursor-pointer")}
-          src="/shared/desktop/icon-cart.svg"
+          src="/audiophile-e-commerce-website/shared/desktop/icon-cart.svg"
         />
       </button>
       {state.cartModal ? <CartModal /> : null}

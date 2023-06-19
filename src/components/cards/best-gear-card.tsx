@@ -5,11 +5,11 @@ export type BestGearProps = HTMLAttributes<HTMLDivElement> & {
   width: number;
 };
 export default function BestGear({ width }: BestGearProps) {
-  let src = "/shared/mobile/image-best-gear.jpg";
+  let src = "/audiophile-e-commerce-website/shared/mobile/image-best-gear.jpg";
   if (width < 1440 && width >= 768) {
-    src = "/shared/tablet/image-best-gear.jpg";
+    src = "/audiophile-e-commerce-website/shared/tablet/image-best-gear.jpg";
   } else if (width >= 1440) {
-    src = "/shared/desktop/image-best-gear.jpg";
+    src = "/audiophile-e-commerce-website/shared/desktop/image-best-gear.jpg";
   }
 
   return (

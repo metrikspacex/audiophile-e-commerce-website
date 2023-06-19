@@ -8,11 +8,14 @@ export type ZX7SpeakerProps = HTMLAttributes<HTMLDivElement> & {
 export default function ZX7Speaker({ width }: ZX7SpeakerProps) {
   const { pathname } = useLocation();
 
-  let productSrc = "/home/mobile/image-speaker-zx7.jpg";
+  let productSrc =
+    "/audiophile-e-commerce-website/home/mobile/image-speaker-zx7.jpg";
   if (width < 1440 && width >= 768) {
-    productSrc = "/home/tablet/image-speaker-zx7.jpg";
+    productSrc =
+      "/audiophile-e-commerce-website/home/tablet/image-speaker-zx7.jpg";
   } else if (width >= 1440) {
-    productSrc = "/home/desktop/image-speaker-zx7.jpg";
+    productSrc =
+      "/audiophile-e-commerce-website/home/desktop/image-speaker-zx7.jpg";
   }
 
   return (

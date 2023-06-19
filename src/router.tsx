@@ -25,35 +25,35 @@ const router = createBrowserRouter([
           },
         ],
         element: <HomeLayout />,
-        path: "/",
+        path: "/audiophile-e-commerce-website/",
       },
       {
         children: [
           {
             element: <EarphonesPage />,
-            path: "/category/earphones/",
+            path: "/audiophile-e-commerce-website/category/earphones/",
           },
           {
             element: <HeadphonesPage />,
-            path: "/category/headphones/",
+            path: "/audiophile-e-commerce-website/category/headphones/",
           },
           {
             element: <SpeakersPage />,
-            path: "/category/speakers/",
+            path: "/audiophile-e-commerce-website/category/speakers/",
           },
         ],
         element: <CategoryLayout />,
-        path: "/category/",
+        path: "/audiophile-e-commerce-website/category/",
       },
       {
         children: [
           {
             element: <CheckoutPage />,
-            path: "/checkout/",
+            path: "/audiophile-e-commerce-website/checkout/",
           },
         ],
         element: <CheckoutLayout />,
-        path: "/checkout/",
+        path: "/audiophile-e-commerce-website/checkout/",
       },
       {
         children: [
@@ -70,15 +70,15 @@ const router = createBrowserRouter([
                 return _content;
               }
             },
-            path: "/product/:slug",
+            path: "/audiophile-e-commerce-website/product/:slug",
           },
         ],
         element: <ProductLayout />,
-        path: "/product/",
+        path: "/audiophile-e-commerce-website/product/",
       },
     ],
     element: <Root />,
-    path: "/",
+    path: "/audiophile-e-commerce-website/",
   },
 ]);
 export default router;

@@ -8,11 +8,14 @@ export type YX1EarphonesProps = HTMLAttributes<HTMLDivElement> & {
 export default function YX1Earphones({ width }: YX1EarphonesProps) {
   const { pathname } = useLocation();
 
-  let productSrc = "/home/mobile/image-earphones-yx1.jpg";
+  let productSrc =
+    "/audiophile-e-commerce-website/home/mobile/image-earphones-yx1.jpg";
   if (width < 1440 && width >= 768) {
-    productSrc = "/home/tablet/image-earphones-yx1.jpg";
+    productSrc =
+      "/audiophile-e-commerce-website/home/tablet/image-earphones-yx1.jpg";
   } else if (width >= 1440) {
-    productSrc = "/home/desktop/image-earphones-yx1.jpg";
+    productSrc =
+      "/audiophile-e-commerce-website/home/desktop/image-earphones-yx1.jpg";
   }
 
   return (

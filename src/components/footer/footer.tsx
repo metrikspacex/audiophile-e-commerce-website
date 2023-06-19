@@ -19,7 +19,11 @@ export default function Footer({}: FooterProps) {
           "md:col-full md:row-1",
           "xl:col-1 xl:row-1"
         )}>
-        <img alt="logo" className={clsx("")} src="/shared/desktop/logo.svg" />
+        <img
+          alt="logo"
+          className={clsx("")}
+          src="/audiophile-e-commerce-website/shared/desktop/logo.svg"
+        />
       </div>
       <div
         className={clsx(
@@ -27,16 +31,22 @@ export default function Footer({}: FooterProps) {
           "md:col-full md:row-2 md:h-[max-content] md:flex-row md:gap-x-[3.4rem]",
           "xl:col-2 xl:row-1 xl:justify-self-end"
         )}>
-        <Link state={{ from: pathname }} to="/">
+        <Link state={{ from: pathname }} to="/audiophile-e-commerce-website/">
           home
         </Link>
-        <Link state={{ from: pathname }} to="/category/headphones">
+        <Link
+          state={{ from: pathname }}
+          to="/audiophile-e-commerce-website/category/headphones">
           headphones
         </Link>
-        <Link state={{ from: pathname }} to="/category/speakers">
+        <Link
+          state={{ from: pathname }}
+          to="/audiophile-e-commerce-website/category/speakers">
           speakers
         </Link>
-        <Link state={{ from: pathname }} to="/category/earphones">
+        <Link
+          state={{ from: pathname }}
+          to="/audiophile-e-commerce-website/category/earphones">
           earphones
         </Link>
       </div>
@@ -70,17 +80,17 @@ export default function Footer({}: FooterProps) {
         <img
           alt="icon facebook"
           className={clsx("")}
-          src="/shared/desktop/icon-facebook.svg"
+          src="/audiophile-e-commerce-website/shared/desktop/icon-facebook.svg"
         />
         <img
           alt="icon twitter"
           className={clsx("")}
-          src="/shared/desktop/icon-twitter.svg"
+          src="/audiophile-e-commerce-website/shared/desktop/icon-twitter.svg"
         />
         <img
           alt="icon instagram"
           className={clsx("")}
-          src="/shared/desktop/icon-instagram.svg"
+          src="/audiophile-e-commerce-website/shared/desktop/icon-instagram.svg"
         />
       </div>
     </footer>

@@ -58,22 +58,22 @@ export default function HeadphonesPage() {
         <CategoryCard
           alt="headphones"
           height={width >= 1440 ? "16rem" : "10.4rem"}
-          src="/shared/desktop/image-category-thumbnail-headphones.png"
-          to="/category/headphones"
+          src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-headphones.png"
+          to="/audiophile-e-commerce-website/category/headphones"
           width={width >= 1440 ? "12.2rem" : "8rem"}
         />
         <CategoryCard
           alt="speakers"
           height={width >= 1440 ? "14.6rem" : "10.1rem"}
-          src="/shared/desktop/image-category-thumbnail-speakers.png"
-          to="/category/speakers"
+          src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-speakers.png"
+          to="/audiophile-e-commerce-website/category/speakers"
           width={width >= 1440 ? "12.1rem" : "8.4rem"}
         />
         <CategoryCard
           alt="earphones"
           height={width >= 1440 ? "16.1rem" : "10.4rem"}
-          src="/shared/desktop/image-category-thumbnail-earphones.png"
-          to="/category/earphones"
+          src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-earphones.png"
+          to="/audiophile-e-commerce-website/category/earphones"
           width={width >= 1440 ? "17.8rem" : "10.3rem"}
         />
       </section>
