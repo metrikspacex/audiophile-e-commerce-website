@@ -12,11 +12,11 @@ export default function HomeLayout() {
   const { setMenuModal, state } = useStore();
   const width = useWidth();
 
-  let heroSrc = "/home/mobile/image-header.jpg";
+  let heroSrc = "/audiophile-e-commerce-website/home/mobile/image-header.jpg";
   if (width < 1440 && width >= 768) {
-    heroSrc = "/home/tablet/image-header.jpg";
+    heroSrc = "/audiophile-e-commerce-website/home/tablet/image-header.jpg";
   } else if (width >= 1440) {
-    heroSrc = "/home/desktop/image-hero.jpg";
+    heroSrc = "/audiophile-e-commerce-website/home/desktop/image-hero.jpg";
   }
 
   return (

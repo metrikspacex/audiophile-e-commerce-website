@@ -25,7 +25,11 @@ export default function CheckoutPage() {
             className={clsx(
               "font-primary text-[1.5rem] font-medium leading-[2.5rem] text-primary-800 opacity-50 mix-blend-normal"
             )}
-            to={location.state.from === null ? location.state.from : "/"}>
+            to={
+              location.state.from === null
+                ? location.state.from
+                : "/audiophile-e-commerce-website/"
+            }>
             Go back
           </Link>
         ) : null}
