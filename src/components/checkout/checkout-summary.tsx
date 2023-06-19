@@ -142,6 +142,7 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
           className={clsx(
             "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"
           )}
+          disabled={cart.length === 0}
           type="button"
           onClick={() => {
             if (cart.length > 0) {
