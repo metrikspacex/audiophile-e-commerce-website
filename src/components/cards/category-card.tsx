@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export type CategoryCardProps = HTMLAttributes<HTMLDivElement> & {
   alt: string;
@@ -18,6 +18,7 @@ export default function CategoryCard({
   to,
   width,
 }: CategoryCardProps) {
+  const { pathname } = useLocation();
   const onClick = () => {
     if (setMenu !== undefined) setMenu();
   };
@@ -43,7 +44,7 @@ export default function CategoryCard({
         )}>
         {alt}
       </h1>
-      <Link to={to} onClick={onClick}>
+      <Link state={{ from: pathname }} to={to} onClick={onClick}>
         <p
           className={clsx(
             "mb-[2.2rem] font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-800 opacity-50 mix-blend-normal"

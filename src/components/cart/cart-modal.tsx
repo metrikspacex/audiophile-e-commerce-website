@@ -1,10 +1,11 @@
 import clsx from "clsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import useCart from "../../hooks/useStore";
 
 export default function CartModal() {
   const { deleteCart, state, updateCart } = useCart();
+  const { pathname } = useLocation();
 
   const computeCost = () => {
     if (state.cart.length === 0) {
@@ -59,7 +60,7 @@ export default function CartModal() {
                   className={clsx(
                     "font-primary text-[1.5rem] font-bold leading-[2.5rem] text-primary-800 "
                   )}>
-                  {item.name.split(" ").slice(0, -1).join(" ")}
+                  {item.name.split(" ").slice(0, 1).join(" ")}
                 </h1>
                 <p
                   className={clsx(
@@ -123,7 +124,7 @@ export default function CartModal() {
         </p>
       </div>
 
-      <Link to="/checkout">
+      <Link state={{ from: pathname }} to="/checkout">
         <button
           className={clsx(
             "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"

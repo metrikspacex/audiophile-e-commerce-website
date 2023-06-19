@@ -139,7 +139,7 @@
     "new-cap": "off",
     "no-alert": "error",
     "no-caller": "error",
-    "no-console": "off",
+    "no-console": "error",
     "no-constant-condition": "off",
     "no-continue": "error",
     "no-debugger": "error",

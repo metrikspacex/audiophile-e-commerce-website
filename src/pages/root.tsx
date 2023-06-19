@@ -19,7 +19,6 @@ export default function Root() {
     if (state.cartModal) setCartModal();
     if (state.checkoutModal) setCheckoutModal();
     if (state.menuModal) setMenuModal();
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 

@@ -1,45 +1,45 @@
 import type { ReactElement } from "react";
 import { createContext, useCallback, useReducer } from "react";
 
-const testStore = [
-  {
-    categoryImage: {
-      desktop:
-        "/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
-      mobile:
-        "/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
-      tablet:
-        "/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
-    },
-    id: 4,
-    name: "XX99 Mk II Headphones",
-    price: 2999,
-    quantity: 1,
-  },
-  {
-    categoryImage: {
-      desktop:
-        "/product-xx59-headphones/desktop/image-category-page-preview.jpg",
-      mobile: "/product-xx59-headphones/mobile/image-category-page-preview.jpg",
-      tablet: "/product-xx59-headphones/tablet/image-category-page-preview.jpg",
-    },
-    id: 2,
-    name: "XX59 Headphones",
-    price: 899,
-    quantity: 2,
-  },
-  {
-    categoryImage: {
-      desktop: "/product-yx1-earphones/desktop/image-category-page-preview.jpg",
-      mobile: "/product-yx1-earphones/mobile/image-category-page-preview.jpg",
-      tablet: "/product-yx1-earphones/tablet/image-category-page-preview.jpg",
-    },
-    id: 1,
-    name: "YX1 Earphones",
-    price: 599,
-    quantity: 1,
-  },
-];
+// const testStore = [
+//   {
+//     categoryImage: {
+//       desktop:
+//         "/product-xx99-mark-two-headphones/desktop/image-category-page-preview.jpg",
+//       mobile:
+//         "/product-xx99-mark-two-headphones/mobile/image-category-page-preview.jpg",
+//       tablet:
+//         "/product-xx99-mark-two-headphones/tablet/image-category-page-preview.jpg",
+//     },
+//     id: 4,
+//     name: "XX99 Mk II Headphones",
+//     price: 2999,
+//     quantity: 1,
+//   },
+//   {
+//     categoryImage: {
+//       desktop:
+//         "/product-xx59-headphones/desktop/image-category-page-preview.jpg",
+//       mobile: "/product-xx59-headphones/mobile/image-category-page-preview.jpg",
+//       tablet: "/product-xx59-headphones/tablet/image-category-page-preview.jpg",
+//     },
+//     id: 2,
+//     name: "XX59 Headphones",
+//     price: 899,
+//     quantity: 2,
+//   },
+//   {
+//     categoryImage: {
+//       desktop: "/product-yx1-earphones/desktop/image-category-page-preview.jpg",
+//       mobile: "/product-yx1-earphones/mobile/image-category-page-preview.jpg",
+//       tablet: "/product-yx1-earphones/tablet/image-category-page-preview.jpg",
+//     },
+//     id: 1,
+//     name: "YX1 Earphones",
+//     price: 599,
+//     quantity: 1,
+//   },
+// ];
 
 type StoreState = {
   cart: CartItem[];
@@ -49,7 +49,7 @@ type StoreState = {
 };
 
 const initialStoreState: StoreState = {
-  cart: testStore,
+  cart: [],
   cartModal: false,
   checkoutModal: false,
   menuModal: false,
@@ -111,8 +111,8 @@ const reducer = (state: StoreState, action: ReducerAction): StoreState => {
         return { ...state, cart: JSON.parse(_fetchedCart) };
       }
 
-      window.localStorage.setItem("cart", JSON.stringify([...testStore]));
-      return { ...state, cart: testStore };
+      window.localStorage.setItem("cart", JSON.stringify([]));
+      return { ...state, cart: [] };
     }
     case REDUCER_ACTION_TYPE.SHOWCART: {
       return {

@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import type { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export type YX1EarphonesProps = HTMLAttributes<HTMLDivElement> & {
   width: number;
 };
 export default function YX1Earphones({ width }: YX1EarphonesProps) {
+  const { pathname } = useLocation();
+
   let productSrc = "/home/mobile/image-earphones-yx1.jpg";
   if (width < 1440 && width >= 768) {
     productSrc = "/home/tablet/image-earphones-yx1.jpg";
@@ -45,7 +47,7 @@ export default function YX1Earphones({ width }: YX1EarphonesProps) {
             )}>
             YX1 EARPHONES
           </h1>
-          <Link to="/product/yx1-earphones">
+          <Link state={{ from: pathname }} to="/product/yx1-earphones">
             <button
               className={clsx(
                 "block h-[4.8rem] w-[16rem] border-[0.1rem] border-primary-800 bg-transparent font-primary text-[1.3rem] font-bold leading-[1.8rem] tracking-[0.1rem] text-primary-800"

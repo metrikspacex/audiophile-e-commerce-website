@@ -12,6 +12,15 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
   const { setCheckoutModal } = useStore();
 
   const computeTotal = () => {
+    if (cart.length === 0) {
+      return {
+        flatShipping: 0,
+        flatTotal: 0,
+        grandTotal: 0,
+        vatTotal: 0,
+      };
+    }
+
     const flatTotal = cart
       .map((item) => item.price * item.quantity)
       .reduce((previous, current) => previous + current);
@@ -19,6 +28,7 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
     const vatTotal = Math.floor(flatTotal * TAXRATE);
     const grandTotal = FLATSHIPPING + flatTotal;
     return {
+      flatShipping: FLATSHIPPING,
       flatTotal,
       grandTotal,
       vatTotal,
@@ -57,7 +67,7 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
                   className={clsx(
                     "font-primary text-[1.5rem] font-bold leading-[2.5rem] text-primary-800"
                   )}>
-                  {item.name.split(" ").slice(0, -1).join(" ")}
+                  {item.name.split(" ").slice(0, 1).join(" ")}
                 </h1>
                 <span
                   className={clsx(
@@ -99,7 +109,7 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
           <span
             className={clsx(
               "font-primary text-[1.8rem] font-bold uppercase leading-[2.5rem] text-primary-800"
-            )}>{`$ ${FLATSHIPPING}`}</span>
+            )}>{`$ ${computeTotal().flatShipping}`}</span>
         </div>
 
         <div className={clsx("mb-[2.4rem] flex items-center justify-between")}>

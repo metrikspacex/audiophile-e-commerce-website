@@ -1,11 +1,13 @@
 import clsx from "clsx";
 import type { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export type ZX7SpeakerProps = HTMLAttributes<HTMLDivElement> & {
   width: number;
 };
 export default function ZX7Speaker({ width }: ZX7SpeakerProps) {
+  const { pathname } = useLocation();
+
   let productSrc = "/home/mobile/image-speaker-zx7.jpg";
   if (width < 1440 && width >= 768) {
     productSrc = "/home/tablet/image-speaker-zx7.jpg";
@@ -32,7 +34,7 @@ export default function ZX7Speaker({ width }: ZX7SpeakerProps) {
           )}>
           ZX7 SPEAKER
         </h1>
-        <Link to="/product/zx7-speaker">
+        <Link state={{ from: pathname }} to="/product/zx7-speaker">
           <button
             className={clsx(
               "mx-auto block h-[4.8rem] w-[16rem] border-[1px] border-primary-800 bg-transparent font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-800"

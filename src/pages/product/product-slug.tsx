@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 
 import BestGear from "../../components/cards/best-gear-card";
 import CategoryCard from "../../components/cards/category-card";
@@ -12,6 +12,7 @@ import useStore from "../../hooks/useStore";
 import useWidth from "../../hooks/useWidth";
 
 export default function ProductSlug() {
+  const location = useLocation();
   const product = useLoaderData() as Product;
   const width = useWidth();
   const { state } = useStore();
@@ -30,7 +31,7 @@ export default function ProductSlug() {
             className={clsx(
               "font-primary text-[1.5rem] font-medium leading-[2.5rem] text-primary-800 opacity-50 mix-blend-normal"
             )}
-            to="/">
+            to={location.state.from === null ? location.state.from : "/"}>
             Go back
           </Link>
         ) : null}
@@ -46,6 +47,7 @@ export default function ProductSlug() {
         <Showcase
           _id={product.id}
           _new={product.new}
+          category={product.category}
           categoryImage={product.categoryImage}
           description={product.description}
           name={product.name}
@@ -55,7 +57,7 @@ export default function ProductSlug() {
       </section>
       <div
         className={clsx(
-          "mx-auto mt-[8.8rem] flex w-full max-w-[32.7rem] flex-col justify-between gap-y-[11.3rem] bg-primary-100",
+          "mx-auto mt-[8.8rem] flex w-full max-w-[32.7rem] flex-col justify-between gap-y-[8.8rem] bg-primary-100",
           "md:mt-[12rem] md:max-w-[68.9rem] md:gap-y-[12rem]",
           "xl:mt-[16rem] xl:max-w-[110rem] xl:flex-row"
         )}>
@@ -93,7 +95,7 @@ export default function ProductSlug() {
       <section
         aria-label="category selection"
         className={clsx(
-          "mx-auto mt-[12rem] w-full max-w-[32.7rem] rounded-[0.8rem] bg-primary-100 pt-[5.2rem]",
+          "mx-auto w-full max-w-[32.7rem] rounded-[0.8rem] bg-primary-100 pt-[5.2rem]",
           "md:flex md:max-w-[68.9rem] md:justify-around md:gap-x-[1rem]",
           "xl:mt-[16rem] xl:max-w-[110rem] xl:pt-[7.9rem]"
         )}
@@ -102,21 +104,21 @@ export default function ProductSlug() {
           alt="headphones"
           height={width >= 1440 ? "16rem" : "10.4rem"}
           src="/shared/desktop/image-category-thumbnail-headphones.png"
-          to="/category/headphones"
+          to="/category/headphones/"
           width={width >= 1440 ? "12.2rem" : "8rem"}
         />
         <CategoryCard
           alt="speakers"
           height={width >= 1440 ? "14.6rem" : "10.1rem"}
           src="/shared/desktop/image-category-thumbnail-speakers.png"
-          to="/category/speakers"
+          to="/category/speakers/"
           width={width >= 1440 ? "12.1rem" : "8.4rem"}
         />
         <CategoryCard
           alt="earphones"
           height={width >= 1440 ? "16.1rem" : "10.4rem"}
           src="/shared/desktop/image-category-thumbnail-earphones.png"
-          to="/category/earphones"
+          to="/category/earphones/"
           width={width >= 1440 ? "17.8rem" : "10.3rem"}
         />
       </section>

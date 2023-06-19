@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import CheckoutForm from "../../components/checkout/checkout-form";
 import CheckoutSummary from "../../components/checkout/checkout-summary";
@@ -7,6 +7,7 @@ import useStore from "../../hooks/useStore";
 import useWidth from "../../hooks/useWidth";
 
 export default function CheckoutPage() {
+  const location = useLocation();
   const width = useWidth();
   const { state } = useStore();
 
@@ -24,7 +25,7 @@ export default function CheckoutPage() {
             className={clsx(
               "font-primary text-[1.5rem] font-medium leading-[2.5rem] text-primary-800 opacity-50 mix-blend-normal"
             )}
-            to="/">
+            to={location.state.from === null ? location.state.from : "/"}>
             Go back
           </Link>
         ) : null}

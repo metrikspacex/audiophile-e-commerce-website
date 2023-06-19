@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import type { HTMLAttributes } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import useStore from "../../hooks/useStore";
 import CartModal from "../cart/cart-modal";
@@ -11,6 +11,7 @@ export type NavProps = HTMLAttributes<HTMLElement> & {
   width: number;
 };
 export default function Nav({ setMenu, width }: NavProps) {
+  const { pathname } = useLocation();
   const { setCartModal, state } = useStore();
 
   return (
@@ -32,6 +33,7 @@ export default function Nav({ setMenu, width }: NavProps) {
       ) : null}
       <Link
         className={clsx("md:ml-[4.2rem] md:grow", "xl:ml-0 xl:grow-0")}
+        state={{ from: pathname }}
         to="/">
         <img
           alt="logo"

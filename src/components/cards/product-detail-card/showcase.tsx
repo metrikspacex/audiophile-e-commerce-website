@@ -6,6 +6,7 @@ import useCart from "../../../hooks/useStore";
 export type ShowcaseProps = HTMLAttributes<HTMLDivElement> & {
   _id: Id;
   _new: New;
+  category: Category;
   categoryImage: CategoryImage;
   description: Description;
   name: Name;
@@ -13,12 +14,13 @@ export type ShowcaseProps = HTMLAttributes<HTMLDivElement> & {
   width: number;
 };
 export default function Showcase({
-  categoryImage,
   _id,
-  description,
-  price,
   _new,
+  category,
+  categoryImage,
+  description,
   name,
+  price,
   width,
 }: ShowcaseProps) {
   const [quantity, setQuantity] = useState<number>(1);
@@ -30,13 +32,6 @@ export default function Showcase({
   } else if (width >= 1440) {
     productSrc = categoryImage.desktop;
   }
-
-  const getName = () => {
-    return name
-      .split("-")
-      .filter((item) => item !== "headphones")
-      .join(" ");
-  };
 
   const onClick = () => {
     addItemToCart({
@@ -55,7 +50,10 @@ export default function Showcase({
   return (
     <div
       className={clsx(
-        "grid w-full grid-cols-[1fr] grid-rows-[32.7rem_3.2rem_39.6rem]",
+        "grid w-full grid-cols-[1fr] grid-rows-[32.7rem_3.2rem_1fr]",
+        {
+          "grid-rows-[32.7rem_4rem_1fr]": !_new,
+        },
         "md:grid-cols-[28.1rem_6.9rem_1fr] md:grid-rows-[48rem]",
         "xl:grid-cols-[54rem_12.5rem_1fr] xl:grid-rows-[1fr]"
       )}>
@@ -81,7 +79,10 @@ export default function Showcase({
           className={clsx(
             "mb-[2.4rem] font-primary text-[2.8rem] font-bold uppercase leading-[3.8rem] tracking-[0.1rem]"
           )}>
-          {getName()}
+          <span className={clsx("block")}>
+            {name.split(" ").slice(0, -1).join(" ")}
+          </span>
+          <span className={clsx("block")}>{category}</span>
         </h1>
         <p
           className={clsx(

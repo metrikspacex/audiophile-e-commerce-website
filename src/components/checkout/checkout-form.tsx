@@ -62,7 +62,6 @@ export default function CheckoutForm({}: CheckoutFormProps) {
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
-    console.log(name);
     setCheckoutFormData((ps) => {
       const _ps = { ...ps };
 

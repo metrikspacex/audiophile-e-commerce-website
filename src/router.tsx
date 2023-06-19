@@ -1,4 +1,4 @@
-import { createBrowserRouter, json } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
 import content from "./assets/content.json";
 import EarphonesPage from "./pages/category/earphones.tsx";
@@ -60,6 +60,7 @@ const router = createBrowserRouter([
           {
             element: <ProductSlug />,
             errorElement: <ProductError />,
+            index: true,
             loader: async ({ params }) => {
               const _content = content.find(
                 (item) => item.slug === params.slug
@@ -68,12 +69,8 @@ const router = createBrowserRouter([
               if (_content) {
                 return _content;
               }
-
-              throw json({
-                message: "Product not found",
-              });
             },
-            path: ":slug",
+            path: "/product/:slug",
           },
         ],
         element: <ProductLayout />,
