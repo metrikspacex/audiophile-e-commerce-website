@@ -51,7 +51,12 @@
     "typescript": "^5.0.2",
     "vite": "^4.3.9"
   },
+  "homepage": "https://metrikspacex.github.io/audiophile-e-commerce-website/",
   "name": "audiophile-e-commerce-website",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/metrikspacex/audiophile-e-commerce-website/"
+  },
   "private": true,
   "scripts": {
     "build": "tsc && vite build",
