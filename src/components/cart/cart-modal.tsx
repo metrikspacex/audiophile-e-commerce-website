@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 
 import useCart from "../../hooks/useStore";
 
@@ -39,7 +40,6 @@ export default function CartModal() {
         </button>
       </div>
 
-      {/* Loop */}
       <div className={clsx("mb-[3.2rem]")}>
         {state.cart.map((item, index) => {
           return (
@@ -123,13 +123,15 @@ export default function CartModal() {
         </p>
       </div>
 
-      <button
-        className={clsx(
-          "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"
-        )}
-        type="button">
-        checkout
-      </button>
+      <Link to="/checkout">
+        <button
+          className={clsx(
+            "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"
+          )}
+          type="button">
+          checkout
+        </button>
+      </Link>
     </div>
   );
 }

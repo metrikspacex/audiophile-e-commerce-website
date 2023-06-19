@@ -132,6 +132,7 @@
         "tabWidth": 2
       }
     ],
+    "max-lines": "off",
     "max-lines-per-function": "off",
     "max-statements": "off",
     "multiline-comment-style": "off",

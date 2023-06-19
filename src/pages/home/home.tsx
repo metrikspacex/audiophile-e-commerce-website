@@ -55,7 +55,7 @@ export default function HomePage() {
         <YX1Earphones width={width} />
       </section>
       <section
-        aria-label="we have the best audio gear"
+        aria-label="image with article of why we have the best audio gear"
         className={clsx(
           "mx-auto my-[12rem] max-w-[32.7rem]",
           "md:max-w-[68.9rem]",

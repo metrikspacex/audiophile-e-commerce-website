@@ -1,6 +1,7 @@
 import clsx from "clsx";
 import { Outlet } from "react-router-dom";
 
+import CheckoutModal from "../../components/checkout/checkout-modal";
 import Footer from "../../components/footer/footer";
 import Menu from "../../components/menu/menu";
 import Nav from "../../components/nav/nav";
@@ -26,10 +27,12 @@ export default function CheckoutLayout() {
         {state.menuModal && width < 1440 ? (
           <Menu setMenu={setMenuModal} />
         ) : null}
+        {state.checkoutModal ? <CheckoutModal cart={state.cart} /> : null}
       </header>
       <main
-        className={clsx("col-1 row-2 bg-primary-100", {
-          "brightness-[0.2]": state.cartModal || state.menuModal,
+        className={clsx("col-1 row-2 bg-primary-200", {
+          "brightness-[0.2]":
+            state.cartModal || state.checkoutModal || state.menuModal,
         })}>
         <Outlet />
       </main>

@@ -5,7 +5,7 @@ import EarphonesPage from "./pages/category/earphones.tsx";
 import HeadphonesPage from "./pages/category/headphones.tsx";
 import CategoryLayout from "./pages/category/layout.tsx";
 import SpeakersPage from "./pages/category/speakers.tsx";
-import CheckoutPage from "./pages/checkout/check.tsx";
+import CheckoutPage from "./pages/checkout/checkout.tsx";
 import CheckoutLayout from "./pages/checkout/layout.tsx";
 import HomePage from "./pages/home/home.tsx";
 import HomeLayout from "./pages/home/layout.tsx";

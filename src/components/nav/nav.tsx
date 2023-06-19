@@ -26,7 +26,7 @@ export default function Nav({ setMenu, width }: NavProps) {
           className={clsx("hover:cursor-pointer")}
           src="/shared/tablet/icon-hamburger.svg"
           onClick={() => {
-            if (!state.cartModal) setMenu();
+            if (!state.cartModal && !state.checkoutModal) setMenu();
           }}
         />
       ) : null}
@@ -51,7 +51,7 @@ export default function Nav({ setMenu, width }: NavProps) {
         className={clsx("bg-transparent")}
         type="button"
         onClick={() => {
-          if (!state.menuModal) setCartModal();
+          if (!state.menuModal && !state.checkoutModal) setCartModal();
         }}>
         <img
           alt="cart"

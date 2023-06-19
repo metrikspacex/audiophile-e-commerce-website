@@ -18,6 +18,22 @@ type Description = string;
 
 type Features = string;
 
+type CheckoutFormData = {
+  address: string;
+  city: string;
+  country: string;
+  eMoneyNumber?: string;
+  eMoneyPin?: string;
+  email: string;
+  name: string;
+  paymentMethod: {
+    delivery: boolean;
+    emoney: boolean;
+  };
+  phoneNumber: string;
+  zip: string;
+};
+
 type Gallery = {
   first: {
     desktop: string;

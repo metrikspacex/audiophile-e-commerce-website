@@ -29,7 +29,8 @@ export default function ProductLayout() {
       </header>
       <main
         className={clsx("col-1 row-2 bg-primary-100", {
-          "brightness-[0.2]": state.cartModal || state.menuModal,
+          "brightness-[0.2]":
+            state.cartModal || state.checkoutModal || state.menuModal,
         })}>
         <Outlet />
       </main>

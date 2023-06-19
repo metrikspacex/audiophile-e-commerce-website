@@ -44,19 +44,23 @@ const testStore = [
 type StoreState = {
   cart: CartItem[];
   cartModal: boolean;
+  checkoutModal: boolean;
   menuModal: boolean;
 };
 
 const initialStoreState: StoreState = {
   cart: testStore,
   cartModal: false,
+  checkoutModal: false,
   menuModal: false,
 };
 
 const REDUCER_ACTION_TYPE = {
   ADDCART: "ADDCART",
   DELETECART: "DELETECART",
+  FETCHCART: "FETCHCART",
   SHOWCART: "SHOWCART",
+  SHOWCHECKOUT: "SHOWCHECKOUT",
   SHOWMENU: "SHOWMENU",
   UPDATECART: "UPDATECART",
 };
@@ -94,15 +98,32 @@ const reducer = (state: StoreState, action: ReducerAction): StoreState => {
         _cart = [..._filtedById, updatedItem];
       }
 
+      window.localStorage.setItem("cart", JSON.stringify(_cart));
       return { ...state, cart: _cart };
     }
     case REDUCER_ACTION_TYPE.DELETECART: {
       return { ...state, cart: [] };
     }
+    case REDUCER_ACTION_TYPE.FETCHCART: {
+      const _fetchedCart = window.localStorage.getItem("cart");
+
+      if (_fetchedCart !== null) {
+        return { ...state, cart: JSON.parse(_fetchedCart) };
+      }
+
+      window.localStorage.setItem("cart", JSON.stringify([...testStore]));
+      return { ...state, cart: testStore };
+    }
     case REDUCER_ACTION_TYPE.SHOWCART: {
       return {
         ...state,
         cartModal: !state.cartModal,
+      };
+    }
+    case REDUCER_ACTION_TYPE.SHOWCHECKOUT: {
+      return {
+        ...state,
+        checkoutModal: !state.checkoutModal,
       };
     }
     case REDUCER_ACTION_TYPE.SHOWMENU: {
@@ -137,6 +158,8 @@ const reducer = (state: StoreState, action: ReducerAction): StoreState => {
         }
       }
 
+      window.localStorage.setItem("cart", JSON.stringify(_cart));
+
       return { ...state, cart: _cart };
     }
     default: {
@@ -159,8 +182,18 @@ const useStoreContext = (initial: StoreState) => {
     []
   );
 
+  const fetchCart = useCallback(
+    () => dispatch({ type: REDUCER_ACTION_TYPE.FETCHCART }),
+    []
+  );
+
   const setCartModal = useCallback(
     () => dispatch({ type: REDUCER_ACTION_TYPE.SHOWCART }),
+    []
+  );
+
+  const setCheckoutModal = useCallback(
+    () => dispatch({ type: REDUCER_ACTION_TYPE.SHOWCHECKOUT }),
     []
   );
 
@@ -178,7 +211,9 @@ const useStoreContext = (initial: StoreState) => {
   return {
     addItemToCart,
     deleteCart,
+    fetchCart,
     setCartModal,
+    setCheckoutModal,
     setMenuModal,
     state,
     updateCart,
@@ -190,7 +225,9 @@ export type UseStoreContext = ReturnType<typeof useStoreContext>;
 const StoreContext = createContext<UseStoreContext>({
   addItemToCart: () => {},
   deleteCart: () => {},
+  fetchCart: () => {},
   setCartModal: () => {},
+  setCheckoutModal: () => {},
   setMenuModal: () => {},
   state: initialStoreState,
   updateCart: () => {},

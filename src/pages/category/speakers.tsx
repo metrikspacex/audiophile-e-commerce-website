@@ -24,11 +24,13 @@ export default function SpeakersPage() {
   return (
     <>
       <section
+        aria-label="collection of our speaker products"
         className={clsx(
           "mx-auto mt-[6.4rem] flex w-full max-w-[32.7rem] flex-col gap-y-[12rem] bg-primary-100",
           "md:mt-[12rem] md:max-w-[68.9rem]",
           "xl:mt-[16rem] xl:max-w-[110rem] xl:gap-y-[16rem]"
-        )}>
+        )}
+        role="contentinfo">
         {data.map((item) => {
           return (
             <ProductCard
@@ -76,7 +78,7 @@ export default function SpeakersPage() {
         />
       </section>
       <section
-        aria-label="we have the best audio gear"
+        aria-label="image with article of why we have the best audio gear"
         className={clsx(
           "mx-auto my-[12rem] max-w-[32.7rem]",
           "md:max-w-[68.9rem]",
