@@ -144,7 +144,9 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
           )}
           type="button"
           onClick={() => {
-            setCheckoutModal();
+            if (cart.length > 0) {
+              setCheckoutModal();
+            }
           }}>
           CONTINUE & PAY
         </button>
