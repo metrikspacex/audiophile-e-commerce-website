@@ -37,8 +37,8 @@ export default function HomePage() {
         <CategoryCard
           alt="earphones"
           height={width >= 1440 ? "16.1rem" : "10.4rem"}
-          src="/shared/desktop/image-category-thumbnail-earphones.png"
-          to="/category/earphones"
+          src="/audiophile-e-commerce-website/shared/desktop/image-category-thumbnail-earphones.png"
+          to="/audiophile-e-commerce-website/category/earphones"
           width={width >= 1440 ? "17.8rem" : "10.3rem"}
         />
       </section>

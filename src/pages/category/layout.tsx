@@ -31,7 +31,7 @@ export default function CategoryLayout() {
           className={clsx(
             "my-auto block text-center font-primary text-[2.8rem] font-bold uppercase leading-[3.8rem] tracking-[0.2rem] text-primary-100"
           )}>
-          {pathname.split("/")[2]}
+          {pathname.split("/")[3]}
         </div>
       </header>
       <main
