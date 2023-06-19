@@ -125,7 +125,9 @@ export default function CartModal() {
         </p>
       </div>
 
-      <Link state={{ from: pathname }} to="/checkout">
+      <Link
+        state={{ from: pathname }}
+        to="/audiophile-e-commerce-website/checkout">
         <button
           className={clsx(
             "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"

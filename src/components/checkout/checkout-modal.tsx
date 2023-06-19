@@ -22,7 +22,7 @@ export default function CheckoutModal({ cart, width }: CheckoutModalProps) {
       )}>
       {/*  */}
       <img
-        alt=""
+        alt="confirmation checkmark"
         className={clsx("mb-[2.3rem] h-[6.4rem] w-[6.4rem]", "md:mb-[3.3rem]")}
         src="/audiophile-e-commerce-website/checkout/icon-order-confirmation.svg"
       />
