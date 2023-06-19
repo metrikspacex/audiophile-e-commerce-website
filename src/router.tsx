@@ -5,11 +5,13 @@ import EarphonesPage from "./pages/category/earphones.tsx";
 import HeadphonesPage from "./pages/category/headphones.tsx";
 import CategoryLayout from "./pages/category/layout.tsx";
 import SpeakersPage from "./pages/category/speakers.tsx";
+import CheckoutPage from "./pages/checkout/check.tsx";
+import CheckoutLayout from "./pages/checkout/layout.tsx";
 import HomePage from "./pages/home/home.tsx";
 import HomeLayout from "./pages/home/layout.tsx";
 import ProductError from "./pages/product/error.tsx";
 import ProductLayout from "./pages/product/layout.tsx";
-import ProductId from "./pages/product/product-id.tsx";
+import ProductSlug from "./pages/product/product-slug.tsx";
 
 const router = createBrowserRouter([
   {
@@ -43,12 +45,20 @@ const router = createBrowserRouter([
   {
     children: [
       {
-        element: <ProductId />,
+        element: <CheckoutPage />,
+        path: "/checkout/",
+      },
+    ],
+    element: <CheckoutLayout />,
+    path: "/checkout",
+  },
+  {
+    children: [
+      {
+        element: <ProductSlug />,
         errorElement: <ProductError />,
         loader: async ({ params }) => {
-          const _content = content.find(
-            (item) => item.id.toString() === params.id
-          );
+          const _content = content.find((item) => item.slug === params.slug);
 
           if (_content) {
             return _content;
@@ -58,7 +68,7 @@ const router = createBrowserRouter([
             message: "Product not found",
           });
         },
-        path: ":id",
+        path: ":slug",
       },
     ],
     element: <ProductLayout />,

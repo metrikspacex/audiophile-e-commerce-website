@@ -3,11 +3,10 @@ import type { HTMLAttributes } from "react";
 import { Link } from "react-router-dom";
 
 export type RecommendedProps = HTMLAttributes<HTMLDivElement> & {
-  _id: Id;
   others: Others[];
   width: number;
 };
-export default function Recommended({ _id, others, width }: RecommendedProps) {
+export default function Recommended({ others, width }: RecommendedProps) {
   return (
     <div className={clsx("")}>
       <h1
@@ -47,7 +46,7 @@ export default function Recommended({ _id, others, width }: RecommendedProps) {
                 )}>
                 {item.name}
               </h1>
-              <Link to={`/product/${_id}`}>
+              <Link to={`/product/${item.slug}`}>
                 <button
                   className={clsx(
                     "mx-auto block h-[4.8rem] w-[16rem] bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"

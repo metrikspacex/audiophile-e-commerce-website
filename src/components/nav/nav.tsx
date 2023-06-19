@@ -2,6 +2,8 @@ import clsx from "clsx";
 import type { Dispatch, HTMLAttributes, SetStateAction } from "react";
 import { Link } from "react-router-dom";
 
+import useCartModal from "../../hooks/useCartModal";
+import CartModal from "../cart/cart-modal";
 import NavLink from "./nav-link";
 
 export type NavProps = HTMLAttributes<HTMLElement> & {
@@ -9,10 +11,12 @@ export type NavProps = HTMLAttributes<HTMLElement> & {
   width: number;
 };
 export default function Nav({ setMenu, width }: NavProps) {
+  const { setCartModal, state } = useCartModal();
+
   return (
     <nav
       className={clsx(
-        "z-[2] col-1 row-1 mx-auto flex w-full max-w-[37.5rem] items-center justify-around border-b-2 border-primary-100/10 bg-transparent",
+        "relative z-[2] col-1 row-1 mx-auto flex w-full max-w-[37.5rem] items-center justify-around border-b-2 border-primary-100/10 bg-transparent",
         "md:max-w-[68.9rem] md:justify-start",
         "xl:max-w-[110rem] xl:justify-between"
       )}>
@@ -41,13 +45,17 @@ export default function Nav({ setMenu, width }: NavProps) {
           <NavLink text="earphones" to="/category/earphones" />
         </ul>
       )}
-      <Link to="/cart">
+      <button
+        className={clsx("bg-transparent")}
+        type="button"
+        onClick={() => setCartModal()}>
         <img
           alt="cart"
           className={clsx("hover:cursor-pointer")}
           src="/shared/desktop/icon-cart.svg"
         />
-      </Link>
+      </button>
+      {state.cartModal ? <CartModal /> : null}
     </nav>
   );
 }

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 export type HeroButtonProps = HTMLAttributes<HTMLButtonElement>;
 export default function HeroButton({}: HeroButtonProps) {
   return (
-    <Link to="/product/4">
+    <Link to="/product/xx99-mark-two-headphones">
       <button
         className={clsx(
           "mx-auto block h-[4.8rem] w-[16rem] bg-primary-500 font-primary  text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100",

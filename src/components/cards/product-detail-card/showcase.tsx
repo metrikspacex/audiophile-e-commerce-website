@@ -1,7 +1,10 @@
 import clsx from "clsx";
 import { type HTMLAttributes, useState } from "react";
 
+import useCart from "../../../hooks/useCart";
+
 export type ShowcaseProps = HTMLAttributes<HTMLDivElement> & {
+  _id: Id;
   _new: New;
   categoryImage: CategoryImage;
   description: Description;
@@ -11,6 +14,7 @@ export type ShowcaseProps = HTMLAttributes<HTMLDivElement> & {
 };
 export default function Showcase({
   categoryImage,
+  _id,
   description,
   price,
   _new,
@@ -18,6 +22,7 @@ export default function Showcase({
   width,
 }: ShowcaseProps) {
   const [quantity, setQuantity] = useState<number>(1);
+  const { addItemToCart } = useCart();
 
   let productSrc = categoryImage.mobile;
   if (width < 1440 && width >= 768) {
@@ -31,6 +36,20 @@ export default function Showcase({
       .split("-")
       .filter((item) => item !== "headphones")
       .join(" ");
+  };
+
+  const onClick = () => {
+    addItemToCart({
+      categoryImage: {
+        desktop: categoryImage.desktop,
+        mobile: categoryImage.mobile,
+        tablet: categoryImage.tablet,
+      },
+      id: _id,
+      name,
+      price,
+      quantity,
+    });
   };
 
   return (
@@ -100,7 +119,8 @@ export default function Showcase({
               className={clsx(
                 "h-full w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"
               )}
-              type="button">
+              type="button"
+              onClick={onClick}>
               ADD TO CART
             </button>
           </span>

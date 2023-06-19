@@ -45,7 +45,7 @@ export default function YX1Earphones({ width }: YX1EarphonesProps) {
             )}>
             YX1 EARPHONES
           </h1>
-          <Link to="/product/1">
+          <Link to="/product/yx1-earphones">
             <button
               className={clsx(
                 "block h-[4.8rem] w-[16rem] border-[0.1rem] border-primary-800 bg-transparent font-primary text-[1.3rem] font-bold leading-[1.8rem] tracking-[0.1rem] text-primary-800"

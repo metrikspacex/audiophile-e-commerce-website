@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 
 import Footer from "../../components/footer/footer";
@@ -11,6 +11,10 @@ export default function CategoryLayout() {
   const [menu, setMenu] = useState<boolean>(false);
   const { pathname } = useLocation();
   const width = useWidth();
+
+  useEffect(() => {
+    window.document.documentElement.scrollTop = 0;
+  }, [pathname]);
 
   return (
     <div

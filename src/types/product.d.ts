@@ -1,3 +1,11 @@
+type CartItem = {
+  categoryImage: CategoryImage;
+  id: Id;
+  name: Name;
+  price: Price;
+  quantity: Quantity;
+};
+
 type Category = string;
 
 type CategoryImage = {

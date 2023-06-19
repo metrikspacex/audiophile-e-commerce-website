@@ -1,5 +1,6 @@
 import clsx from "clsx";
-import { Link, useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 
 import BestGear from "../../components/cards/best-gear-card";
 import CategoryCard from "../../components/cards/category-card";
@@ -10,9 +11,17 @@ import Recommended from "../../components/cards/product-detail-card/recommended"
 import Showcase from "../../components/cards/product-detail-card/showcase";
 import useWidth from "../../hooks/useWidth";
 
-export default function ProductId() {
+export default function ProductSlug() {
   const product = useLoaderData() as Product;
+  const { pathname } = useLocation();
   const width = useWidth();
+
+  useEffect(() => {
+    window.document.documentElement.scrollTo({
+      behavior: "smooth",
+      top: 0,
+    });
+  }, [pathname]);
 
   return (
     <>
@@ -40,6 +49,7 @@ export default function ProductId() {
         )}
         role="banner">
         <Showcase
+          _id={product.id}
           _new={product.new}
           categoryImage={product.categoryImage}
           description={product.description}
@@ -83,7 +93,7 @@ export default function ProductId() {
           "xl:my-[16rem] xl:max-w-[110rem]"
         )}
         role="link">
-        <Recommended _id={product.id} others={product.others} width={width} />
+        <Recommended others={product.others} width={width} />
       </section>
       <section
         aria-label="category selection"

@@ -70,7 +70,7 @@ export default function ZX9Speaker({ width }: ZX9SpeakerProps) {
           Upgrade to premium speakers that are phenomenally built to deliver
           truly remarkable sound.
         </p>
-        <Link to="/product/6">
+        <Link to="/product/zx9-speaker">
           <button
             className={clsx(
               "mx-auto block h-[4.8rem] w-[16rem] bg-primary-800 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-100"
