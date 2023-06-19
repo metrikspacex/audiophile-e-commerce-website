@@ -32,7 +32,7 @@ export default function CheckoutPage() {
       <section
         aria-label="checkout form"
         className={clsx(
-          "mx-auto mb-[2.4rem] mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
+          "mx-auto mb-[3.2rem] mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
           "md:mt-[3.3rem] md:max-w-[68.9rem]",
           "xl:mt-[7.9rem] xl:max-w-[110rem]"
         )}
@@ -42,7 +42,7 @@ export default function CheckoutPage() {
       <section
         aria-label="checkout summary"
         className={clsx(
-          "mx-auto mb-[2.4rem] mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
+          "mx-auto mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
           "md:mt-[3.3rem] md:max-w-[68.9rem]",
           "xl:mt-[7.9rem] xl:max-w-[110rem]"
         )}

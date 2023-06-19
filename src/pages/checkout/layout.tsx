@@ -27,7 +27,9 @@ export default function CheckoutLayout() {
         {state.menuModal && width < 1440 ? (
           <Menu setMenu={setMenuModal} />
         ) : null}
-        {state.checkoutModal ? <CheckoutModal cart={state.cart} /> : null}
+        {state.checkoutModal ? (
+          <CheckoutModal cart={state.cart} width={width} />
+        ) : null}
       </header>
       <main
         className={clsx("col-1 row-2 bg-primary-200", {

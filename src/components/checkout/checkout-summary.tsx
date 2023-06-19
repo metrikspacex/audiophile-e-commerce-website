@@ -28,7 +28,7 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
   return (
     <div
       className={clsx(
-        "w-full rounded-[0.8rem] bg-primary-100 p-[3.2rem_2.4rem_3.2rem_2.4rem]"
+        "mb-[9.7rem] w-full rounded-[0.8rem] bg-primary-100 p-[3.2rem_2.4rem_3.2rem_2.4rem]"
       )}>
       <h1
         className={clsx(
@@ -101,7 +101,7 @@ export default function CheckoutSummary({ cart }: CheckoutSummaryProps) {
             )}>{`$ ${FLATSHIPPING}`}</span>
         </div>
 
-        <div className={clsx("mb-[0.8rem] flex items-center justify-between")}>
+        <div className={clsx("mb-[2.4rem] flex items-center justify-between")}>
           <span
             className={clsx(
               "font-primary text-[1.5rem] font-medium uppercase leading-[2.5rem] text-primary-800 opacity-50 mix-blend-normal"
