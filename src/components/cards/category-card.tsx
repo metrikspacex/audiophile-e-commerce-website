@@ -53,7 +53,7 @@ export default function CategoryCard({
           <img
             alt="arrow pointing right"
             className={clsx("ml-[1.3rem] inline-block")}
-            src="/shared/desktop/icon-arrow-right.svg"
+            src="/audiophile-e-commerce-website/shared/desktop/icon-arrow-right.svg"
           />
         </p>
       </Link>

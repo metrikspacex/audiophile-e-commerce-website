@@ -43,6 +43,7 @@ export default function CartModal() {
 
       <div className={clsx("mb-[3.2rem]")}>
         {state.cart.map((item, index) => {
+          // Mark
           return (
             <div
               className={clsx(

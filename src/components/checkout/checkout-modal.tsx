@@ -24,7 +24,7 @@ export default function CheckoutModal({ cart, width }: CheckoutModalProps) {
       <img
         alt=""
         className={clsx("mb-[2.3rem] h-[6.4rem] w-[6.4rem]", "md:mb-[3.3rem]")}
-        src="/checkout/icon-order-confirmation.svg"
+        src="/audiophile-e-commerce-website/checkout/icon-order-confirmation.svg"
       />
       <h1
         className={clsx(
@@ -120,7 +120,7 @@ export default function CheckoutModal({ cart, width }: CheckoutModalProps) {
         </div>
       </div>
       {/*  */}
-      <Link to="/">
+      <Link to="/audiophile-e-commerce-website/">
         <button
           className={clsx(
             "h-[4.8rem] w-full bg-primary-500 font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[1px] text-primary-100"

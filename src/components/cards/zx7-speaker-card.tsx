@@ -37,7 +37,9 @@ export default function ZX7Speaker({ width }: ZX7SpeakerProps) {
           )}>
           ZX7 SPEAKER
         </h1>
-        <Link state={{ from: pathname }} to="/product/zx7-speaker">
+        <Link
+          state={{ from: pathname }}
+          to="/audiophile-e-commerce-website/product/zx7-speaker">
           <button
             className={clsx(
               "mx-auto block h-[4.8rem] w-[16rem] border-[1px] border-primary-800 bg-transparent font-primary text-[1.3rem] font-bold uppercase leading-[1.8rem] tracking-[0.1rem] text-primary-800"

@@ -43,7 +43,7 @@ export default function Nav({ setMenu, width }: NavProps) {
       </Link>
       {width < 1440 ? null : (
         <ul className={clsx("flex grow justify-center gap-x-[3.4rem]")}>
-          <NavLink text="home" to="/" />
+          <NavLink text="home" to="/audiophile-e-commerce-website/" />
           <NavLink
             text="headphones"
             to="/audiophile-e-commerce-website/category/headphones"
