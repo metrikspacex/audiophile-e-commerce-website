@@ -37,19 +37,15 @@ L
 src/components/hero/hero.tsx,1/4/143814fcc1610123d2eea76b2b72eb015e5536a5
 L
 src/components/menu/menu.tsx,8/9/89c8ac97eb754b1ac25d00582ee8717eb6b9d617
->
-src/layout.tsx,d/0/d01c32044f81c1406e8264de87922dd05f91170c
-P
- src/components/header/header.tsx,7/3/7369eb04106109159830761d6bed5b45c03c0427
-W
-'src/components/cards/best-gear-card.tsx,9/c/9c10d94e1a4d989775e476260a4503012273de3e
 9
 	.eslintrc,4/b/4be5f5e3cea171c304090be92469b2f2cb51039a
-Y
-)src/components/cards/zx9-speaker-card.tsx,3/4/343c154e78e16e12e9d869808c862a523b717c3e
-Y
-)src/components/cards/zx7-speaker-card.tsx,c/1/c1e807547f931fd67a1157e482629d0c96a13995
 [
 +src/components/cards/yx1-earphones-card.tsx,2/2/2206f48fa442817233d1817388dfca46d4a6e7c2
 G
 src/pages/home/home.tsx,7/5/7541f26a4cf9e69faf30a73c5fe143c3c9f5c653
+Y
+)src/components/cards/zx9-speaker-card.tsx,3/4/343c154e78e16e12e9d869808c862a523b717c3e
+Y
+)src/components/cards/zx7-speaker-card.tsx,c/1/c1e807547f931fd67a1157e482629d0c96a13995
+W
+'src/components/cards/best-gear-card.tsx,9/c/9c10d94e1a4d989775e476260a4503012273de3e

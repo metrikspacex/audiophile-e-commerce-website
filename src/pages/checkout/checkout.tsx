@@ -29,26 +29,25 @@ export default function CheckoutPage() {
           </Link>
         ) : null}
       </section>
-      <section
-        aria-label="checkout form"
+      <div
         className={clsx(
           "mx-auto mb-[3.2rem] mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
           "md:mt-[3.3rem] md:max-w-[68.9rem]",
-          "xl:mt-[7.9rem] xl:max-w-[110rem]"
-        )}
-        role="form">
-        <CheckoutForm />
-      </section>
-      <section
-        aria-label="checkout summary"
-        className={clsx(
-          "mx-auto mt-[1.6rem] w-full max-w-[32.7rem] bg-primary-200",
-          "md:mt-[3.3rem] md:max-w-[68.9rem]",
-          "xl:mt-[7.9rem] xl:max-w-[110rem]"
-        )}
-        role="presentation">
-        <CheckoutSummary cart={state.cart} />
-      </section>
+          "xl:mb-0 xl:mt-[7.9rem] xl:grid xl:max-w-[110rem] xl:grid-cols-[73rem_35rem] xl:grid-rows-[1fr] xl:gap-x-[3rem]"
+        )}>
+        <section
+          aria-label="checkout form"
+          className={clsx("h-full w-full", "", "xl:col-1 xl:row-1")}
+          role="form">
+          <CheckoutForm />
+        </section>
+        <section
+          aria-label="checkout summary"
+          className={clsx("h-full w-full", "", "xl:col-2 xl:row-1")}
+          role="presentation">
+          <CheckoutSummary cart={state.cart} />
+        </section>
+      </div>
     </>
   );
 }
